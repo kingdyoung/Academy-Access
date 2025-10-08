@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenStudyHub | Free PDFs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/open studyhub.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">🎓</div>
+                <div class="logo-text">OpenStudyHub</div>
+            </div>
+             <div class="card" style="margin:20px; margin-top: auto;">
+                <h4> Quick Navigation </h4>
+                <div style="display:flex; flex-direction:column ;gap: 8px;margin-top: 10px;">
+                    <a href="index.html" class="nav-btn" style="text-align: center;"> Main Platform </a>
+                    <a href="Student Dashboard 2.0.html" class="nav-btn" style="text-align: center;"> Student View</a>
+                    <a href="lecturer 4.0.html" class="nav-btn" style="text-align: center;"> Lecturer View </a>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> <span>PDF Library</span></a></li>
+                <li><a href="#"><i class="fas fa-upload"></i> <span>Upload PDF</span></a></li>
+                <li><a href="#"><i class="fas fa-history"></i> <span>Recent</span></a></li>
+                <li><a href="#"><i class="fas fa-star"></i> <span>Favorites</span></a></li>
+                <li><a href="#"><i class="fas fa-tags"></i> <span>Categories</span></a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+            </ul>
+            
+            <div class="user-profile">
+                <div class="user-avatar">OS</div>
+                <div class="user-info">
+                    <h4>OpenStudyHub</h4>
+                    <p>PDF Library</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search PDFs...">
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Welcome Banner -->
+                <section class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>OpenStudyHub PDF Library</h1>
+                        <p>Access and share educational PDFs. Upload your own materials or browse our collection.</p>
+                    </div>
+                    <div class="welcome-image">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                </section>
+
+                <!-- Upload Section -->
+                <section class="upload-section">
+                    <div class="section-title">
+                        <h2>Upload PDF</h2>
+                    </div>
+                    <form class="upload-form" id="uploadForm">
+                        <div class="form-group">
+                            <label for="pdfTitle">PDF Title</label>
+                            <input type="text" id="pdfTitle" placeholder="Enter PDF title..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pdfFile">Select PDF File</label>
+                            <input type="file" id="pdfFile" accept=".pdf, application/pdf" required>
+                        </div>
+                        <button type="submit" class="upload-btn">
+                            <i class="fas fa-upload"></i> Upload PDF
+                        </button>
+                    </form>
+                </section>
+
+                <!-- PDF Grid -->
+                <section class="pdf-section">
+                    <div class="section-title">
+                        <h2>Available PDFs</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="pdf-grid" id="pdfGrid">
+                        <!-- PDF cards will be dynamically inserted here -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- PDF Preview Modal -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">PDF Preview</h3>
+                <button class="close-modal" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe class="pdf-viewer" id="pdfViewer" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+       
+    <script src="js/open studyhub.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academy Access — Complete Learning Platform</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <h1>Academy Access</h1>
+    <h3>"Unlock Your Academic Potential"</h3>
+  </header>
+  
+  <div class="container">
+    <div class="topbar">
+      <div class="tabs" role="tablist">
+        <button id="role-student" class="active">Student</button>
+        <button id="role-lecturer">Lecturer</button>
+        <button id="role-pdfs">StudyHub PDFs</button>
+        <button id="role-admin" class="admin-only">Admin</button>
+      </div>
+      
+      <div class="controls">
+        <div class="muted" id="user-greet">Not logged in</div>
+        <button class="secondary" id="themeBtn">🌙 Dark Mode</button>
+        <button class="primary" id="openAuth">🔑 Login / Register</button>
+        <button class="secondary hidden" id="logoutBtn">🚪 Logout</button>
+      </div>
+    </div>
+
+    <!-- Academy Content -->
+    <div id="academy-content">
+      <div class="grid">
+        <div id="mainColumn">
+          <div id="student-area" class="card">
+            <h3>Available Video Lectures</h3>
+            <div id="lecturesList" style="margin-top:16px">
+              <div class="lecture pulse">
+                <div class="meta">
+                  <strong>Loading lectures...</strong>
+                  <div class="muted">Please wait while we load content</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="playerArea" class="card full hidden">
+            <h3 id="playingTitle">Now Playing</h3>
+            <div class="video-wrap">
+              <div class="video-inner">
+                <video id="player" controls controlsList="nodownload noremoteplayback" preload="metadata" playsinline>
+                  Your browser does not support HTML5 video.
+                </video>
+              </div>
+              <div id="watermark" class="watermark">guest • no-id</div>
+            </div>
+
+            <div style="margin-top:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+              <button class="primary" id="aiExplain">AI Explanation</button>
+              <div class="muted">Views: <span id="playingViews">0</span></div>
+              <div class="status hidden" id="viewStatus">View counted</div>
+              <button class="secondary" id="closePlayer">Close Player</button>
+            </div>
+          </div>
+
+          <div id="lecturer-area" class="card hidden">
+            <h3>Lecturer Dashboard</h3>
+            <div id="dashboardContent" style="margin-top:16px">
+              <div class="muted">Please log in as a lecturer to access the dashboard</div>
+            </div>
+          </div>
+
+          <div id="admin-area" class="card admin-only hidden">
+            <h3>Admin Dashboard</h3>
+            <div id="adminContent" style="margin-top:16px">
+              <div class="muted">Please log in as an admin to access administrative features</div>
+            </div>
+          </div>
+        </div>
+
+        <aside id="sideColumn">
+          <div class="card">
+            <h4>Quick Actions</h4>
+            <div style="margin-top:12px; display: flex; flex-direction: column; gap: 10px;">
+              <button class="primary" id="uploadLectureBtn">Upload Lecture</button>
+              <button class="accent" id="openPdfLibraryBtn">Open StudyHub</button>
+              <button class="secondary admin-only" id="manageUsersBtn">Manage Users</button>
+            </div>
+
+            <div style="margin-top:20px">
+              <label class="muted">Switch View</label>
+              <select id="viewSelect" style="margin-top:8px;width:100%">
+                <option value="student">Student View</option>
+                <option value="lecturer">Lecturer View</option>
+                <option value="pdfs">PDF Library</option>
+                <option value="admin" class="admin-only">Admin Dashboard</option>
+              </select>
+            </div>
+
+            <div style="margin-top:20px">
+              <h5>Platform Stats</h5>
+              <div id="dashboardPreview" class="muted">Loading statistics...</div>
+            </div>
+
+            <div style="margin-top:20px">
+              <h5>Quick Navigation</h5>
+              <div class="navigation-buttons">
+                <a href="Student Dashboard 2.0.html" class="nav-btn">Student Dashboard</a>
+                <a href="lecturer 4.0.html" class="nav-btn">Lecturer Dashboard</a>
+                <a href="Admin Dasboard 1.0.html" class="nav-btn admin-only">Admin Dashboard</a>
+                <a href="Open Study hub.html" class="nav-btn">Open-StudyHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h4>About This Platform</h4>
+            <p class="muted">Complete learning platform with video lectures, PDF resources, and interactive features. All data stored locally in your browser.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- PDF Library Content -->
+    <div id="pdf-library" class="pdf-library">
+      <div class="pdf-header">
+        <h2>OpenStudyHub</h2>
+        <p>The Digital Hub for Student Success</p>
+        <div style="margin-top: 1rem;">
+          <button class="secondary" id="backToAcademyBtn">Back to Academy</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <h3 style="margin: 0;">Free PDF Resources</h3>
+          <div class="pdf-search">
+            <input type="text" id="pdfSearch" placeholder="Search PDFs by title, course, or description...">
+          </div>
+        </div>
+
+        <div class="pdf-grid" id="pdfGrid">
+          <!-- PDF cards will be populated by JavaScript -->
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 20px;">
+        <h4>Contribute to StudyHub</h4>
+        <p class="muted">Have educational PDFs to share? Help grow our library by contributing your resources.</p>
+        <button class="secondary" style="margin-top: 12px;" id="contributePdfBtn">Add PDF Resource</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal" class="modal-backdrop">
+    <div class="modal card">
+      <div id="authWrap">
+        <h3>Login / Register</h3>
+        <div class="field">
+          <label>Role</label>
+          <select id="authRole">
+            <option value="student">Student</option>
+            <option value="lecturer">Lecturer</option>
+            <!-- Admin role removed from registration options -->
+          </select>
+        </div>
+        <div class="field">
+          <label>Username</label>
+          <input id="authUsername" placeholder="Choose a username" autocomplete="username">
+          <div class="error-message" id="usernameError"></div>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input id="authEmail" type="email" placeholder="email@example.com" autocomplete="email">
+          <div class="error-message" id="emailError"></div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <input id="authPassword" type="password" placeholder="Enter password" autocomplete="new-password">
+          <div class="error-message" id="passwordError"></div>
+        </div>
+        
+        <!-- Admin Login Section (Hidden by default) -->
+        <div id="adminLoginSection" class="hidden">
+          <div class="field">
+            <label>Admin Password</label>
+            <input id="adminPassword" type="password" placeholder="Enter admin password" autocomplete="current-password">
+            <div class="error-message" id="adminPasswordError"></div>
+          </div>
+          <div class="admin-warning">
+            <p>Admin access is restricted. Use pre-configured admin credentials.</p>
+          </div>
+        </div>
+        
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <button class="primary" id="registerBtn">Register</button>
+          <button class="secondary" id="loginBtn">Login</button>
+          <button class="secondary" id="adminLoginBtn">Admin Login</button>
+          <button class="secondary" id="closeModalBtn">Close</button>
+        </div>
+        <p class="muted" style="margin-top:16px">Register creates a simple local account. No servers involved.</p>
+      </div>
+      
+      <div id="uploadWrap" class="hidden">
+        <h3>Upload Lecture</h3>
+        <div class="field">
+          <label>Title *</label>
+          <input id="upTitle" placeholder="Lecture title">
+          <div class="error-message" id="titleError"></div>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="upDesc" placeholder="Lecture description" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>Video URL *</label>
+          <input id="upVideoUrl" placeholder="https://example.com/video.mp4">
+          <div class="error-message" id="videoUrlError"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <button class="primary" id="submitLectureBtn">Upload Lecture</button>
+          <button class="secondary" id="cancelUploadBtn">Cancel</button>
+        </div>
+      </div>
+      
+      <div id="pdfUploadWrap" class="hidden">
+        <h3>Add PDF Resource</h3>
+        <div class="field">
+          <label>Title *</label>
+          <input id="pdfTitle" placeholder="PDF title">
+          <div class="error-message" id="pdfTitleError"></div>
+        </div>
+        <div class="field">
+          <label>Course/Subject</label>
+          <input id="pdfCourse" placeholder="e.g. Mathematics, Computer Science">
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="pdfDesc" placeholder="Brief description of the PDF content" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label>PDF URL *</label>
+          <input id="pdfUrl" placeholder="https://example.com/document.pdf">
+          <div class="error-message" id="pdfUrlError"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap">
+          <button class="primary" id="submitPdfBtn">Add PDF Resource</button>
+          <button class="secondary" id="cancelPdfBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

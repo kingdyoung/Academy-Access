@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Academy Access</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">Admin Portal</div>
+            </div>
+            <div class="card" style="margin:20px; margin-top:auto;">
+                <h4> Quick Navigation </h4>
+                <div style="display:flex; flex-direction:column;gap:8px; margin-top: 10px;">
+                    <a href="index.html" class="nav-btn" style="text-align: center;"> Main Platform </a>
+                    <a href="Student Dashboard 2.0.html" class="nav-btn" style="text-align: center;"> Student View</a>
+                    <a href="lecturer 4.0.html" class="nav-btn" style="text-align: center;"> Lecturer View </a>
+                    <a href="Open Study hub.html" class="nav-btn" style="text-align: center; "> Open-StudyHub</a>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+                <li><a href="#"><i class="fas fa-users"></i> <span>User Management</span></a></li>
+                <li><a href="#"><i class="fas fa-book"></i> <span>Course Management</span></a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> <span>Analytics</span></a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> <span>System Settings</span></a></li>
+                <li><a href="#"><i class="fas fa-shield-alt"></i> <span>Security</span></a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> <span>Reports</span></a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> <span>Notifications</span></a></li>
+                <li><a href="#"><i class="fas fa-life-ring"></i> <span>Support</span></a></li>
+            </ul>
+            <div class="user-profile">
+                <div class="user-avatar">SA</div>
+                <div class="user-info">
+                    <h4>System Admin</h4>
+                    <p>Administrator</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search users, courses, logs...">
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Welcome Banner -->
+                <section class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>System Administration Dashboard</h1>
+                        <p>Monitor platform activity, manage users, and configure system settings from one centralized location.</p>
+                    </div>
+                    <div class="welcome-image">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <div class="action-card" id="userManagement">
+                        <div class="action-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Add User</h3>
+                        <p>Create new user accounts</p>
+                    </div>
+                    <div class="action-card" id="courseManagement">
+                        <div class="action-icon">
+                            <i class="fas fa-book-medical"></i>
+                        </div>
+                        <h3>Create Course</h3>
+                        <p>Add new course to platform</p>
+                    </div>
+                    <div class="action-card" id="systemBackup">
+                        <div class="action-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Backup System</h3>
+                        <p>Create system backup</p>
+                    </div>
+                    <div class="action-card" id="generateReports">
+                        <div class="action-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Generate Reports</h3>
+                        <p>Create usage reports</p>
+                    </div>
+                </section>
+
+                <!-- Stats Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card stat-1">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>1,247</h3>
+                            <p>Total Users</p>
+                        </div>
+                        <div class="stat-trend trend-up">
+                            +42
+                        </div>
+                    </div>
+                    <div class="stat-card stat-2">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>86</h3>
+                            <p>Active Courses</p>
+                        </div>
+                        <div class="stat-trend trend-up">
+                            +5
+                        </div>
+                    </div>
+                    <div class="stat-card stat-3">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>94%</h3>
+                            <p>System Uptime</p>
+                        </div>
+                        <div class="stat-trend trend-down">
+                            -2%
+                        </div>
+                    </div>
+                    <div class="stat-card stat-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Active Issues</p>
+                        </div>
+                        <div class="stat-trend trend-down">
+                            -3
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity & System Health -->
+                <div class="content-grid">
+                    <!-- Recent Activity -->
+                    <section class="recent-activity">
+                        <div class="section-title">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <ul class="activity-list">
+                            <li class="activity-item activity-1">
+                                <div class="activity-icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>New User Registered</h4>
+                                    <p>Sarah Johnson (Student)</p>
+                                </div>
+                                <div class="activity-time">15 min ago</div>
+                            </li>
+                            <li class="activity-item activity-2">
+                                <div class="activity-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Course Created</h4>
+                                    <p>Advanced Machine Learning</p>
+                                </div>
+                                <div class="activity-time">2 hours ago</div>
+                            </li>
+                            <li class="activity-item activity-3">
+                                <div class="activity-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Security Update</h4>
+                                    <p>System patches applied</p>
+                                </div>
+                                <div class="activity-time">5 hours ago</div>
+                            </li>
+                            <li class="activity-item activity-4">
+                                <div class="activity-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Failed Login Attempt</h4>
+                                    <p>IP: 192.168.1.45 blocked</p>
+                                </div>
+                                <div class="activity-time">1 day ago</div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- System Health -->
+                    <section class="system-health">
+                        <div class="section-title">
+                            <h2>System Health</h2>
+                            <a href="#" class="view-all">Details</a>
+                        </div>
+                        <ul class="health-list">
+                            <li class="health-item health-1">
+                                <div class="health-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="health-content">
+                                    <h4>Database</h4>
+                                    <p>Performance and connectivity</p>
+                                </div>
+                                <div class="health-status good">Optimal</div>
+                            </li>
+                            <li class="health-item health-2">
+                                <div class="health-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="health-content">
+                                    <h4>API Services</h4>
+                                    <p>Response times and uptime</p>
+                                </div>
+                                <div class="health-status warning">Degraded</div>
+                            </li>
+                            <li class="health-item health-3">
+                                <div class="health-icon">
+                                    <i class="fas fa-hdd"></i>
+                                </div>
+                                <div class="health-content">
+                                    <h4>Storage</h4>
+                                    <p>Disk space and I/O performance</p>
+                                </div>
+                                <div class="health-status critical">Critical</div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- User Management -->
+                <section class="user-management">
+                    <div class="section-title">
+                        <h2>User Management</h2>
+                        <a href="#" class="view-all">Manage All</a>
+                    </div>
+                    <table class="user-table">
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Last Active</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.9rem; margin-right: 10px;">MJ</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Michael Johnson</div>
+                                            <div style="font-size: 0.8rem; color: var(--gray);">michael.j@edu.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="user-role role-admin">Admin</span></td>
+                                <td><span class="user-status status-active"></span> Active</td>
+                                <td>2 hours ago</td>
+                                <td>
+                                    <button class="btn btn-outline"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-outline"><i class="fas fa-lock"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.9rem; margin-right: 10px;">RJ</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Dr. Robert Johnson</div>
+                                            <div style="font-size: 0.8rem; color: var(--gray);">r.johnson@edu.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="user-role role-lecturer">Lecturer</span></td>
+                                <td><span class="user-status status-active"></span> Active</td>
+                                <td>1 day ago</td>
+                                <td>
+                                    <button class="btn btn-outline"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-outline"><i class="fas fa-lock"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.9rem; margin-right: 10px;">JS</div>
+                                        <div>
+                                            <div style="font-weight: 500;">Jane Smith</div>
+                                            <div style="font-size: 0.8rem; color: var(--gray);">j.smith@student.edu</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="user-role role-student">Student</span></td>
+                                <td><span class="user-status status-active"></span> Active</td>
+                                <td>5 minutes ago</td>
+                                <td>
+                                    <button class="btn btn-outline"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-outline"><i class="fas fa-lock"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div style="display: flex; align-items: center;">
+                                        <div class="user-avatar" style="width: 32px; height: 32px; font-size: 0.9rem; margin-right: 10px;">DW</div>
+                                        <div>
+                                            <div style="font-weight: 500;">David Wilson</div>
+                                            <div style="font-size: 0.8rem; color: var(--gray);">d.wilson@student.edu</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><span class="user-role role-student">Student</span></td>
+                                <td><span class="user-status status-suspended"></span> Suspended</td>
+                                <td>3 days ago</td>
+                                <td>
+                                    <button class="btn btn-outline"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-success"><i class="fas fa-unlock"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- System Settings -->
+                <section class="system-settings">
+                    <div class="section-title">
+                        <h2>System Settings</h2>
+                    </div>
+                    <div class="settings-grid">
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-icon">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="setting-title">Security Settings</div>
+                            </div>
+                            <p class="setting-description">Configure password policies, two-factor authentication, and security protocols.</p>
+                            <button class="btn btn-primary">Configure</button>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="setting-title">Notification Settings</div>
+                            </div>
+                            <p class="setting-description">Manage system alerts, email notifications, and user communication preferences.</p>
+                            <button class="btn btn-primary">Configure</button>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <div class="setting-title">Appearance</div>
+                            </div>
+                            <p class="setting-description">Customize the platform's visual appearance and theme settings.</p>
+                            <div style="display: flex; align-items: center; gap: 10px; margin-top: 15px;">
+                                <span>Dark Mode</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="darkModeToggle">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="setting-title">Backup & Restore</div>
+                            </div>
+                            <p class="setting-description">Schedule automatic backups and restore system data when needed.</p>
+                            <button class="btn btn-primary" style="margin-right: 10px;">Backup Now</button>
+                            <button class="btn btn-outline">Restore</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+       
+    <script src="js/admin.js"></script>
+</body>
+</html>

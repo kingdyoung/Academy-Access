@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Academy Access</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/student.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <div class="logo-text">AcademyAccess</div>
+            </div>
+            
+            <div class="sidebar-card">
+                <h4>Quick Navigation</h4>
+                <div class="sidebar-buttons">
+                    <a href="index.html" class="nav-btn">Main Platform</a>
+                    <a href="lecturer 4.0.html" class="nav-btn">Lecturer view</a>
+                    <a href="Open Study hub.html" class="nav-btn">Open-StudyHub</a>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+                <li><a href="#"><i class="fas fa-book-open"></i> <span>My Courses</span></a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> <span>Schedule</span></a></li>
+                <li><a href="#"><i class="fas fa-tasks"></i> <span>Assignments</span></a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> <span>Progress</span></a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> <span>Resources</span></a></li>
+                <li><a href="#"><i class="fas fa-comments"></i> <span>Discussions</span></a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+            </ul>
+            
+            <div class="user-profile">
+                <div class="user-avatar">JS</div>
+                <div class="user-info">
+                    <h4>Jane Smith</h4>
+                    <p>Computer Science</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search courses, resources, assignments...">
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <!-- Welcome Banner -->
+                <section class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>Welcome back, CHIEF!</h1>
+                        <p>You have 3 upcoming assignments and 2 new announcements. Continue your learning journey today!</p>
+                    </div>
+                    <div class="welcome-image">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </section>
+
+                <!-- Stats Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card stat-1">
+                        <div class="stat-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>12</h3>
+                            <p>Enrolled Courses</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-2">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>5</h3>
+                            <p>Pending Assignments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-3">
+                        <div class="stat-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>87%</h3>
+                            <p>Overall Progress</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-4">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>24</h3>
+                            <p>Achievements</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- My Courses -->
+                <section class="courses-section">
+                    <div class="section-title">
+                        <h2>My Courses</h2>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="courses-grid">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-code"></i>
+                                <div class="course-badge">In Progress</div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Web Development Fundamentals</h3>
+                                <div class="course-info">
+                                    <span>Prof. Johnson</span>
+                                    <span>12 Lessons</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary">Continue</button>
+                                    <button class="btn btn-outline">Resources</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-database"></i>
+                                <div class="course-badge">New</div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">Database Management Systems</h3>
+                                <div class="course-info">
+                                    <span>Dr. Williams</span>
+                                    <span>8 Lessons</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 30%"></div>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary">Start</button>
+                                    <button class="btn btn-outline">Resources</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-image">
+                                <i class="fas fa-paint-brush"></i>
+                                <div class="course-badge">Completed</div>
+                            </div>
+                            <div class="course-content">
+                                <h3 class="course-title">UI/UX Design Principles</h3>
+                                <div class="course-info">
+                                    <span>Prof. Davis</span>
+                                    <span>10 Lessons</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 100%"></div>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary">Review</button>
+                                    <button class="btn btn-outline">Certificate</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity & Upcoming Deadlines -->
+                <div class="content-grid">
+                    <!-- Recent Activity -->
+                    <section class="recent-activity">
+                        <div class="section-title">
+                            <h2>Recent Activity</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <ul class="activity-list">
+                            <li class="activity-item activity-1">
+                                <div class="activity-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Submitted Assignment</h4>
+                                    <p>Web Development - Project 2</p>
+                                </div>
+                                <div class="activity-time">2 hours ago</div>
+                            </li>
+                            <li class="activity-item activity-2">
+                                <div class="activity-icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Watched Lecture</h4>
+                                    <p>Database Normalization</p>
+                                </div>
+                                <div class="activity-time">5 hours ago</div>
+                            </li>
+                            <li class="activity-item activity-3">
+                                <div class="activity-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Posted in Discussion</h4>
+                                    <p>Algorithm Complexity</p>
+                                </div>
+                                <div class="activity-time">1 day ago</div>
+                            </li>
+                            <li class="activity-item activity-4">
+                                <div class="activity-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4>Earned Achievement</h4>
+                                    <p>Perfect Score - Quiz 3</p>
+                                </div>
+                                <div class="activity-time">2 days ago</div>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Upcoming Deadlines -->
+                    <section class="upcoming-deadlines">
+                        <div class="section-title">
+                            <h2>Upcoming Deadlines</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="deadline-list">
+                            <div class="deadline-item deadline-urgent">
+                                <div class="deadline-date">
+                                    <div class="day">15</div>
+                                    <div class="month">OCT</div>
+                                </div>
+                                <div class="deadline-content">
+                                    <h4>Web Development Project</h4>
+                                    <p>Due in 2 days</p>
+                                </div>
+                            </div>
+                            <div class="deadline-item">
+                                <div class="deadline-date">
+                                    <div class="day">18</div>
+                                    <div class="month">OCT</div>
+                                </div>
+                                <div class="deadline-content">
+                                    <h4>Database Design Assignment</h4>
+                                    <p>Due in 5 days</p>
+                                </div>
+                            </div>
+                            <div class="deadline-item">
+                                <div class="deadline-date">
+                                    <div class="day">22</div>
+                                    <div class="month">OCT</div>
+                                </div>
+                                <div class="deadline-content">
+                                    <h4>Algorithms Quiz</h4>
+                                    <p>Due in 9 days</p>
+                                </div>
+                            </div>
+                            <div class="deadline-item">
+                                <div class="deadline-date">
+                                    <div class="day">28</div>
+                                    <div class="month">OCT</div>
+                                </div>
+                                <div class="deadline-content">
+                                    <h4>Research Paper Submission</h4>
+                                    <p>Due in 15 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+   
+    <script src="js/student.js"></script>
+</body>
+</html>
